@@ -1,0 +1,6 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 95
+"GET /about/ HTTP/1.1" 200 171
+"GET / HTTP/1.1" 200 95
+/Users/nadia/Django/s1/s1/settings.py changed, reloading.
+Watching for file changes with StatReloader

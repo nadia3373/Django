@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Магазин | Список товаров{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-4">Список товаров</h2>
+    <ul>
+        {% for product in products %}
+            <li class="mb-2">
+                <a href="{% url 'product_detail' product.pk %}">{{ product }}</a>
+            </li>
+        {% empty %}
+            <p>Нет товаров</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'product_create' %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Создать товар</a>
+{% endblock %}
