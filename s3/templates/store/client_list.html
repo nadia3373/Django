@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Магазин | Список покупателей{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-4">Список покупателей</h2>
+    <ul>
+        {% for client in clients %}
+            <li class="mb-2">
+                <a href="{% url 'client_detail' client.pk %}">{{ client }}</a>
+            </li>
+        {% empty %}
+            <p>Список пуст</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'client_create' %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Создать покупателя</a>
+{% endblock %}
