@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Магазин - Список заказов{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-4">Список заказов</h2>
+    <h2>За последние 7 дней (неделю):</h2>
+    <ul>
+        {% for order in orders_7_days %}
+            <li>{{ order.product }} - {{ order.order_date }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>За последние 30 дней (месяц):</h2>
+    <ul>
+        {% for order in orders_30_days %}
+            <li>{{ order.product }} - {{ order.order_date }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>За последние 365 дней (год):</h2>
+    <ul>
+        {% for order in orders_365_days %}
+            <li>{{ order.product }} - {{ order.order_date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'order_create' %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Создать заказ</a>
+{% endblock %}
