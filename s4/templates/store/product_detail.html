@@ -9,6 +9,7 @@
     <p><strong>Цена:</strong> {{ product.price }}</p>
     <p><strong>Количество:</strong> {{ product.quantity }}</p>
     <p><strong>Дата создания:</strong> {{ product.added_date }}</p>
+    <p><strong>Изображение:</strong> {{ product.photo }}</p>
     <a href="{% url 'product_edit' product.pk %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Редактировать товар</a>
     <a href="{% url 'product_list' %}" class="ml-4 bg-gray-400 hover:bg-gray-600 text-white py-2 px-4 rounded">Вернуться к списку</a>
 {% endblock %}

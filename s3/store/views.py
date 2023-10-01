@@ -61,7 +61,7 @@ def product_detail(request, pk):
 
 def product_create(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             return redirect('product_detail', pk=product.pk)
