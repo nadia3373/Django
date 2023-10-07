@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-blue-500 py-4 text-white text-center">
+        <h1 class="text-2xl font-bold">Магазин</h1>
+    </header>
+    <nav class="bg-gray-200 py-2">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="{% url 'client_list' %}">Клиенты</a></li>
+            <li><a href="{% url 'product_list' %}">Товары</a></li>
+            <li><a href="{% url 'order_list' %}">Заказы</a></li>
+        </ul>
+    </nav>
+    <div class="container mx-auto mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

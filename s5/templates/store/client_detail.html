@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Магазин | Информация о покупателе{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-4">Информация о покупателе</h2>
+    <p><strong>Имя:</strong> {{ client.name }}</p>
+    <p><strong>Email:</strong> {{ client.email }}</p>
+    <p><strong>Номер телефона:</strong> {{ client.phone_number }}</p>
+    <p><strong>Адрес:</strong> {{ client.address }}</p>
+    <p><strong>Дата регистрации:</strong> {{ client.registration_date }}</p>
+    <a href="{% url 'client_edit' client.pk %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Редактировать покупателя</a>
+    <a href="{% url 'client_list' %}" class="ml-4 bg-gray-400 hover:bg-gray-600 text-white py-2 px-4 rounded">Вернуться к списку</a>
+{% endblock %}

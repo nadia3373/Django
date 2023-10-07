@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Магазин - Подробности товара{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-4">Подробности товара</h2>
+    <p><strong>Покупатель:</strong> <a href="{% url 'client_detail' order.client.pk %}">{{ order.client }}</a></p>
+    <p><strong>Товары:</strong></p>
+    <ul>
+        {% for product in order.products.all %}
+            <li><a href="{% url 'product_detail' product.pk %}">{{ product }}</a></li>
+        {% endfor %}
+    </ul>
+    <p><strong>Общая сумма:</strong> {{ order.total_amount }}</p>
+    <p><strong>Дата заказа:</strong> {{ order.order_date }}</p>
+    <a href="{% url 'order_edit' order.pk %}" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Редактировать заказ</a>
+    <a href="{% url 'order_list' %}" class="ml-4 bg-gray-400 hover:bg-gray-600 text-white py-2 px-4 rounded">Вернуться к списку</a>
+{% endblock %}
